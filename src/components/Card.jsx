@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Card = ({photo}) => {
-    return (
+const Card = ({ photo }) => {
+  return (
         <div className='card'>
             <img src={photo} alt="" className='w-full' />
             <div className="px-6 py-4">
@@ -16,7 +16,7 @@ const Card = ({photo}) => {
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#winter</span>
             </div>
         </div>
-    )
+  )
 }
 
 export default Card
