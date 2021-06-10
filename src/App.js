@@ -1,8 +1,27 @@
-import Card from './components/Card'
+import Footer from './components/footer/footer'
+import Header from './components/header/header'
+import BodyComponent from './components/content/content'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { getAllCountryAction } from './reducer/country/countryReducer'
+// import Card from './components/Card'
 
 function App () {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getAllCountryAction())
+  }, [dispatch])
   return (
-    <div className='container mx-auto'>
+        <>
+            <Header/>
+            <BodyComponent/>
+            <Footer/>
+        </>
+  )
+}
+
+export default App
+/*  <div className='container mx-auto'>
         <h1>Tailwind CSS</h1>
         <h2>Incorporado con PostCss</h2>
         <button className="btn btn-blue btn-blue:hover">Botón</button>
@@ -17,8 +36,4 @@ function App () {
                 <Card photo='https://picsum.photos/800/600' />
             </div>
         </div>
-    </div>
-  )
-}
-
-export default App
+    </div> */

@@ -1,0 +1,29 @@
+.Card {
+  margin-bottom: 0.5em;
+}
+
+.Card-link {
+  color: #000;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+}
+
+.Card h4 {
+  background: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  font-size: 12px;
+  color: #fff;
+  margin: 0;
+  position: absolute;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+.Card img {
+  width: 100%;
+  object-fit: contain;
+  vertical-align: top;
+  border-radius: 20px;
+}
