@@ -1,9 +1,11 @@
 import Footer from './components/footer/footer'
 import Header from './components/header/header'
 import BodyComponent from './components/content/content'
+import CityDetail from './pages/detail/city_detail'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { getAllCountryAction } from './reducer/country/countryReducer'
+import { Route, Switch } from 'wouter'
 // import Card from './components/Card'
 
 function App () {
@@ -13,8 +15,13 @@ function App () {
   }, [dispatch])
   return (
         <>
-            <Header/>
-            <BodyComponent/>
+           <Header/>
+                <Switch>
+                    <Route path ='/'>
+                        <BodyComponent/>
+                    </Route>
+                    <Route path ='/detail/:id' component={CityDetail}/>
+                </Switch>
             <Footer/>
         </>
   )

@@ -1,12 +1,12 @@
+import { Link } from 'wouter'
 import './card-style.css'
 const CardCountry = ({ country }) => {
   return (
     <div className="Card">
-      <div className="Card-link">
-      <h4>{country.city}, {country.country}</h4>
-      <img src={country.image} />
-
-      </div>
+      <Link className="Card-link" to= {`/detail/${country.id}`}>
+        <img src={country.image} loading="lazy"/>
+        <h4>{country.city}, {country.country} :)</h4>
+      </Link>
   </div>
 
   )

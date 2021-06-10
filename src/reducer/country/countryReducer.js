@@ -3,7 +3,8 @@ import { getAll } from '../../services/country'
 // Si se usara typescrip podria utilizar enum para hacer lo mismo
 export const KEY_REDUCER = {
   COUNTRY_INIT: '@country/init',
-  COUNTRY_UPDATE: '@country/update'
+  COUNTRY_UPDATE: '@country/update',
+  COUNTRY_FILTER: '@country/filter'
 }
 
 export const countryReducer = (state = [], action) => {
@@ -14,6 +15,8 @@ export const countryReducer = (state = [], action) => {
       return action.payload
     case KEY_REDUCER.COUNTRY_UPDATE:
       return { ...state }
+    case KEY_REDUCER.COUNTRY_FILTER:
+      return state.find((value) => value.id === action.payload)
     default:
       return state
   }
