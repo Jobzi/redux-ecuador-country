@@ -8,8 +8,8 @@ export const KEY_REDUCER = {
 }
 
 export const countryReducer = (state = [], action) => {
-  console.log('State', state)
-  console.log('Action', action)
+  // console.log('State', state)
+  // console.log('Action', action)
   switch (action.type) {
     case KEY_REDUCER.COUNTRY_INIT:
       return action.payload

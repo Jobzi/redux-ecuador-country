@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import './style.css'
-const CityDetail = ({ params }) => {
+
+function CityDetail ({ params }) {
   // const country = useSelector(state => state.find((country) => country.id === params.id))
   const countries = useSelector(state => state)
-  // eslint-disable-next-line no-unused-vars
   const [country, setcountry] = useState({})
   useEffect(() => {
     const find = countries.find((country) => country.id === params.id)

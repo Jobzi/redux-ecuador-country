@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux'
 import CardCountry from './card/card'
-import './content-style.css'
-const BodyComponent = () => {
+import './country-style.css'
+
+function BodyComponent () {
   const countries = useSelector(state => state)
   return (
     <div className='ListOfCountries'>
