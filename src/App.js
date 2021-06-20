@@ -2,7 +2,7 @@ import Footer from './components/footer/footer'
 import Header from './components/header/header'
 import CountryUI from './pages/country/country'
 import CityDetail from './pages/detail/city_detail'
-import Login from './pages/login/login'
+import SignInSide from './pages/login/login_ui'
 import UserUI from './pages/user/user_ui'
 import Error404 from './pages/Error/error404'
 import { useDispatch } from 'react-redux'
@@ -21,10 +21,10 @@ function App () {
     <>
       <UserContextProvider>
         <Header/>
-          <Login/>
           <Switch>
               <Route path ='/' component={CountryUI}/>
               <Route path ='/detail/:id' component={CityDetail}/>
+              <Route path ='/signIn' component={SignInSide}/>
               <Route path ='/user' component={UserUI}/>
               <Route path ='/:rest*' component={Error404}/>
           </Switch>

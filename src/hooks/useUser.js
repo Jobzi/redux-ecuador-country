@@ -4,7 +4,7 @@ import UserContext from '../context/userContext'
 import { loginCredential } from '../services/login'
 
 export function useUser () {
-  const { user, setUser } = useContext(UserContext)
+  const { user, setUser, isLogged, setLogged } = useContext(UserContext)
   const [, navigate] = useLocation()
 
   const HandleLogin = async ({ email, password }) => {
@@ -14,6 +14,7 @@ export function useUser () {
         'loggedAppUser', JSON.stringify(user)
       )
       setUser(user)
+      setLogged(true)
       navigate('/user')
     } catch (error) {
       console.log('Usuario no encontrado')
@@ -22,8 +23,10 @@ export function useUser () {
 
   const handleLogOut = () => {
     setUser(null)
+    setLogged(false)
+    navigate('/')
     // noteservie.setToken('')
     window.localStorage.removeItem('loggedAppUser')
   }
-  return { user, HandleLogin, handleLogOut }
+  return { user, HandleLogin, handleLogOut, isLogged }
 }

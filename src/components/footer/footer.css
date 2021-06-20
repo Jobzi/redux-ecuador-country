@@ -39,7 +39,7 @@
   display: inline-block;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .footer {
     flex-wrap: wrap;
   }

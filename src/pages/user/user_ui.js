@@ -12,9 +12,9 @@ export default function UserUI () {
     }
   }, [user])
   return (
-    <>
+    <div>
         <h1>User Data</h1>
         <h1>{user ? user.user : 'estoy null'}</h1>
-    </>
+    </div>
   )
 }

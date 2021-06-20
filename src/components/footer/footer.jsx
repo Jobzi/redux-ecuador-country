@@ -12,7 +12,7 @@ const Footer = () => {
             <div className='footerSection'>
               Contant
                 <ul className='footer-links'>
-                    <li><a href='www.facebook.com'>Instagram</a></li>
+                    <li><a href='https://www.instagram.com' target='_blank' rel="noreferrer">Instagram</a></li>
                     <li><a>Facebook</a></li>
                     <li><a>GitHub</a></li>
                     <li><a>Telegram</a></li>
