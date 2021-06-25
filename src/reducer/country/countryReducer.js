@@ -13,8 +13,14 @@ export const countryReducer = (state = [], action) => {
   switch (action.type) {
     case KEY_REDUCER.COUNTRY_INIT:
       return action.payload
-    case KEY_REDUCER.COUNTRY_UPDATE:
-      return { ...state }
+    case KEY_REDUCER.COUNTRY_UPDATE: {
+      return state.map(country => {
+        if (country.id === action.payload.id) {
+          country = action.payload
+        }
+        return country
+      })
+    }
     case KEY_REDUCER.COUNTRY_FILTER:
       return state.find((value) => value.id === action.payload)
     default:
@@ -25,6 +31,12 @@ export const countryReducer = (state = [], action) => {
 export const getAllCountry = country => {
   return {
     type: KEY_REDUCER.COUNTRY_INIT,
+    payload: country
+  }
+}
+export const updateCountry = country => {
+  return {
+    type: KEY_REDUCER.COUNTRY_UPDATE,
     payload: country
   }
 }

@@ -1,13 +1,22 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Card, CardContent, TextField } from '@material-ui/core'
+// import Form from './components/formWithHook'
+import Form from './components/form'
 import './style.css'
 import { useUser } from '../../hooks/useUser'
+
+const INITAL_VALUE = {
+  image: '',
+  city: '',
+  country: '',
+  lat: 0,
+  lng: 0
+}
 
 function CityDetail ({ params }) {
   // const country = useSelector(state => state.find((country) => country.id === params.id))
   const countries = useSelector(state => state)
-  const [country, setcountry] = useState({})
+  const [country, setcountry] = useState(INITAL_VALUE)
   const { isLogged } = useUser()
   useEffect(() => {
     const find = countries.find((country) => country.id === params.id)
@@ -23,19 +32,7 @@ function CityDetail ({ params }) {
           <h3> Latitud: {country.lat} </h3>
           <h3> Longitud: {country.lng} </h3>
       </div>
-      {
-        isLogged &&
-        <Card style = {{ margin: '10px' }} >
-          <CardContent>
-            <h3>Editar Informacion Sobre {country.city} </h3>
-            <form noValidate autoComplete="off" className='form-content'>
-              <TextField label="Name" variant="outlined" margin="normal"/>
-              <TextField label="Lat" variant="outlined" margin="normal"/>
-              <TextField label="Long" variant="outlined" margin="normal"/>
-            </form>
-          </CardContent>
-        </Card>
-      }
+      {isLogged && <Form country={country}/>}
 
     </div>
   )
