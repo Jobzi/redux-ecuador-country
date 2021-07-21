@@ -8,10 +8,16 @@ export const setToken = (newToken) => {
   token = `Bearer ${newToken}`
 }
 
-export const loginCredential = async (task) => {
+export const createNewTask = async (task) => {
   const config = {
-    header: { Authorization: token }
+    headers: { Authorization: token }
   }
+  console.log(config)
   const { data } = await axios.post(baseUrl, task, config)
   return data // las tareas
+}
+
+export const getAllTask = async () => {
+  const res = await axios.get(baseUrl)
+  return res.data // notes
 }
