@@ -37,4 +37,5 @@
     grid-template-columns: auto auto;
     grid-gap: 20px;
     justify-content:space-around;
+    align-items: baseline;
 }
