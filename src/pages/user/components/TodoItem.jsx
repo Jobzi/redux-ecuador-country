@@ -1,7 +1,11 @@
 import './style.css'
 export default function TodoItem ({ task, toogleInportant }) {
-  return <>
-        <li className='new-li' onClick={() => toogleInportant(task.id)}>{task.content}</li>
-        {task.important ? <strong style={{ color: 'red', cursor: 'pointer' }}>Important</strong> : <p style={{ color: 'blue', cursor: 'pointer' }}>Not Important</p>}
-    </>
+  return <div className='grid-content'>
+        <li className='new-li'>{task.content}</li>
+        <div onClick={() => toogleInportant(task.id)}>
+          {task.important
+            ? <strong style={{ color: 'red', cursor: 'pointer' }}>Important</strong>
+            : <strong style={{ color: 'blue', cursor: 'pointer' }}>Not Important</strong>}
+        </div>
+    </div>
 }

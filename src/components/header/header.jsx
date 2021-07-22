@@ -5,7 +5,7 @@ const Header = () => {
   const { isLogged, handleLogOut } = useUser()
   return (
     <>
-        <div className="header" >
+        <nav className="header" >
           <Link href='/'>
             <button className ="headerButtom">Inicio</button>
           </Link>
@@ -14,13 +14,13 @@ const Header = () => {
             ? <Link href='/signIn'>
                 <button className ="headerButtom" style={{ backgroundColor: 'green', color: 'white' }}>Sign In</button>
               </Link>
-            : <div>
+            : <>
                 <Link href='/user'>
                   <button className ="headerButtom">User</button>
                 </Link>
                 <button className ="headerButtom" style={{ backgroundColor: 'red', color: 'white' }}onClick={handleLogOut}>Log Out</button>
-              </div>}
-        </div>
+              </>}
+        </nav>
     </>
   )
 }

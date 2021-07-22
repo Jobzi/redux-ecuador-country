@@ -3,7 +3,8 @@ import { useLocation } from 'wouter'
 import UserContext from '../../context/userContext'
 import TodoList from './components/TodoList'
 import FormTask from './components/FormTask'
-
+import logo from '../../assets/img/jobzi.jpg'
+import './components/style.css'
 // eslint-disable-next-line no-unused-vars
 import { getAllTask, createNewTask, setToken } from '../../services/task'
 
@@ -36,8 +37,9 @@ export default function UserUI () {
     }))
   }
   return (
-    <div>
+    <div className='center-content'>
         <h1>Hola!, {user ? user.user : 'Usuario'}</h1>
+        <img className='avatar' src={logo} alt={user.user} />;
         <FormTask handleNewTask ={handleNewTask} token={user.token}/>
         <TodoList tasks={tasks} toogleInportant={toogleInportant}/>
     </div>
