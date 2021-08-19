@@ -8,7 +8,11 @@ function BodyComponent () {
   const countries = useSelector(state => state)
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    setLoading(false)
+    if (countries) {
+      setLoading(false)
+    } else {
+      setLoading(true)
+    }
   }, [countries])
   return (
     <>
